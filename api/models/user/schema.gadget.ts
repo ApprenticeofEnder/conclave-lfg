@@ -35,6 +35,11 @@ export const schema: GadgetModel = {
       storageKey:
         "ModelField-nyVNNH9YIFWS::FieldStorageEpoch-oYVXZkB60MMV",
     },
+    games: {
+      type: "hasMany",
+      children: { model: "game", belongsToField: "owner" },
+      storageKey: "YIRoWwmBkiti",
+    },
     googleImageUrl: {
       type: "url",
       storageKey:
