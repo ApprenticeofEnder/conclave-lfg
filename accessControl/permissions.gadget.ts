@@ -24,6 +24,38 @@ export const permissions: GadgetPermissions = {
             update: true,
           },
         },
+        gameSession: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
+        gameTags: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
+        system: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
+        tag: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
         user: {
           read: {
             filter: "accessControl/filters/user/tenant.gelly",
