@@ -27,10 +27,30 @@ export const schema: GadgetModel = {
       options: ["WEEKLY", "BI_WEEKLY", "MONTHLY", "ONE_SHOT"],
       storageKey: "IAoThIxKAxvZ",
     },
-    owner: {
+    host: {
       type: "belongsTo",
       parent: { model: "user" },
       storageKey: "ETuPQWKy97Ly",
+    },
+    invitedPlayers: {
+      type: "hasManyThrough",
+      sibling: { model: "user", relatedField: "invitations" },
+      join: {
+        model: "gameInvites",
+        belongsToSelfField: "game",
+        belongsToSiblingField: "player",
+      },
+      storageKey: "RZ1fP8aNywJl",
+    },
+    players: {
+      type: "hasManyThrough",
+      sibling: { model: "user", relatedField: "gamesPlaying" },
+      join: {
+        model: "gamePlayers",
+        belongsToSelfField: "game",
+        belongsToSiblingField: "player",
+      },
+      storageKey: "s-EB5UlOX6lR",
     },
     sessions: {
       type: "hasMany",

@@ -35,10 +35,20 @@ export const schema: GadgetModel = {
       storageKey:
         "ModelField-nyVNNH9YIFWS::FieldStorageEpoch-oYVXZkB60MMV",
     },
-    games: {
+    gamesHosting: {
       type: "hasMany",
-      children: { model: "game", belongsToField: "owner" },
+      children: { model: "game", belongsToField: "host" },
       storageKey: "YIRoWwmBkiti",
+    },
+    gamesPlaying: {
+      type: "hasManyThrough",
+      sibling: { model: "game", relatedField: "players" },
+      join: {
+        model: "gamePlayers",
+        belongsToSelfField: "player",
+        belongsToSiblingField: "game",
+      },
+      storageKey: "iRR7Re8WNjtZ",
     },
     googleImageUrl: {
       type: "url",
@@ -49,6 +59,16 @@ export const schema: GadgetModel = {
       type: "string",
       storageKey:
         "ModelField-eXNlr_iMN1JR::FieldStorageEpoch-ugybQWb_BwSs",
+    },
+    invitations: {
+      type: "hasManyThrough",
+      sibling: { model: "game", relatedField: "invitedPlayers" },
+      join: {
+        model: "gameInvites",
+        belongsToSelfField: "player",
+        belongsToSiblingField: "game",
+      },
+      storageKey: "JHVsho8ntFTx",
     },
     lastName: {
       type: "string",

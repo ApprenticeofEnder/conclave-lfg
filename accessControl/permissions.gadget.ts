@@ -24,6 +24,23 @@ export const permissions: GadgetPermissions = {
             update: true,
           },
         },
+        gameInvites: {
+          read: true,
+          actions: {
+            accept: true,
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
+        gamePlayers: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
         gameSession: {
           read: true,
           actions: {

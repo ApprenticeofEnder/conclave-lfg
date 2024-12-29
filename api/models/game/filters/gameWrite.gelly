@@ -1,0 +1,4 @@
+fragment WriteFilter($session: Session) on Game {
+  *
+  [where host.id == $session.userId]
+}
