@@ -16,6 +16,47 @@ export const permissions: GadgetPermissions = {
         action: true,
       },
       models: {
+        game: {
+          read: true,
+          actions: {
+            approve: true,
+            create: true,
+            reject: true,
+            update: true,
+          },
+        },
+        gameApplication: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
+        gamePlayer: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
+        gameSession: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
+        system: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
+          },
+        },
         user: {
           read: {
             filter: "accessControl/filters/user/tenant.gelly",
@@ -27,6 +68,14 @@ export const permissions: GadgetPermissions = {
             signOut: {
               filter: "accessControl/filters/user/tenant.gelly",
             },
+          },
+        },
+        userAvailability: {
+          read: true,
+          actions: {
+            create: true,
+            delete: true,
+            update: true,
           },
         },
       },

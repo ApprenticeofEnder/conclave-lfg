@@ -14,7 +14,10 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "baseUrl": "/",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "noEmit": true
   }
 }

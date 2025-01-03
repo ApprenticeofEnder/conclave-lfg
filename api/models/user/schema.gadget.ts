@@ -7,6 +7,7 @@ export const schema: GadgetModel = {
   type: "gadget/model-schema/v1",
   storageKey: "DataModel-h9ZhnFOmUmLS",
   fields: {
+    aiOptIn: { type: "boolean", storageKey: "90Cgt0pMY_br" },
     email: {
       type: "email",
       validations: { required: true, unique: true },
@@ -35,20 +36,13 @@ export const schema: GadgetModel = {
       storageKey:
         "ModelField-nyVNNH9YIFWS::FieldStorageEpoch-oYVXZkB60MMV",
     },
-    gamesHosting: {
+    gameApplications: {
       type: "hasMany",
-      children: { model: "game", belongsToField: "host" },
-      storageKey: "YIRoWwmBkiti",
-    },
-    gamesPlaying: {
-      type: "hasManyThrough",
-      sibling: { model: "game", relatedField: "players" },
-      join: {
-        model: "gamePlayers",
-        belongsToSelfField: "player",
-        belongsToSiblingField: "game",
+      children: {
+        model: "gameApplication",
+        belongsToField: "player",
       },
-      storageKey: "iRR7Re8WNjtZ",
+      storageKey: "u95f-zsymfP8",
     },
     googleImageUrl: {
       type: "url",
@@ -60,15 +54,10 @@ export const schema: GadgetModel = {
       storageKey:
         "ModelField-eXNlr_iMN1JR::FieldStorageEpoch-ugybQWb_BwSs",
     },
-    invitations: {
-      type: "hasManyThrough",
-      sibling: { model: "game", relatedField: "invitedPlayers" },
-      join: {
-        model: "gameInvites",
-        belongsToSelfField: "player",
-        belongsToSiblingField: "game",
-      },
-      storageKey: "JHVsho8ntFTx",
+    hosting: {
+      type: "hasMany",
+      children: { model: "game", belongsToField: "host" },
+      storageKey: "1mNGoC-5KUP7",
     },
     lastName: {
       type: "string",
@@ -86,6 +75,16 @@ export const schema: GadgetModel = {
       validations: { strongPassword: true },
       storageKey:
         "ModelField-axMNjJbuoylp::FieldStorageEpoch-DhZO_oI4vNK6",
+    },
+    playing: {
+      type: "hasManyThrough",
+      sibling: { model: "game", relatedField: "players" },
+      join: {
+        model: "gamePlayer",
+        belongsToSelfField: "player",
+        belongsToSiblingField: "game",
+      },
+      storageKey: "VHrxy42_-vBL",
     },
     resetPasswordToken: {
       type: "string",

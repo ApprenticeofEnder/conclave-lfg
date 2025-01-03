@@ -8,16 +8,22 @@
     "build": "NODE_ENV=production vite build"
   },
   "dependencies": {
+    "@gadget-client/conclave-lfg": "link:.gadget/client",
     "@gadgetinc/react": "^0.18.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "fastify": "^4.24.2",
+    "gadget-server": "link:.gadget/server",
+    "lucide-react": "^0.469.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6.15.0",
-    "@gadget-client/conclave-lfg": "link:.gadget/client",
-    "gadget-server": "link:.gadget/server"
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "openai": "^4.16.1"
   },
   "devDependencies": {
-    "@types/node": "^20.12.8",
+    "@types/node": "^22.10.5",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "3.2.0",
