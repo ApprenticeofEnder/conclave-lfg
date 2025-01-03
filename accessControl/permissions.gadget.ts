@@ -16,63 +16,6 @@ export const permissions: GadgetPermissions = {
         action: true,
       },
       models: {
-        game: {
-          read: true,
-          actions: {
-            create: true,
-            delete: true,
-            update: true,
-          },
-        },
-        gameInvites: {
-          read: true,
-          actions: {
-            accept: true,
-            create: true,
-            delete: true,
-            update: true,
-          },
-        },
-        gamePlayers: {
-          read: true,
-          actions: {
-            create: true,
-            delete: true,
-            update: true,
-          },
-        },
-        gameSession: {
-          read: true,
-          actions: {
-            create: true,
-            delete: true,
-            update: true,
-          },
-        },
-        gameTags: {
-          read: true,
-          actions: {
-            create: true,
-            delete: true,
-            update: true,
-          },
-        },
-        system: {
-          read: true,
-          actions: {
-            create: true,
-            delete: true,
-            update: true,
-          },
-        },
-        tag: {
-          read: true,
-          actions: {
-            create: true,
-            delete: true,
-            update: true,
-          },
-        },
         user: {
           read: {
             filter: "accessControl/filters/user/tenant.gelly",

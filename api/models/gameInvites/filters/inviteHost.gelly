@@ -1,4 +1,0 @@
-fragment WriteFilter($session: Session) on GameInvite {
-  *
-  [where game.host.id == $session.userId]
-}
